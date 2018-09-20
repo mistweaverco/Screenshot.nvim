@@ -1,0 +1,40 @@
+*Screenshot.txt*  A Vim/Neovim plugin to take Screenshots.
+
+Author:  Marco Kellershoff <https://gorilla.moe/>
+License: MIT License (see |license|)
+
+INTRODUCTION                                    *Screenshot*
+
+This plugin's main purpose is to take a Screenshot of the current window.
+It utilizes the [scrot](https://en.wikipedia.org/wiki/Scrot) binary,
+so you'd have to make sure that `scrot` is installed.
+
+COMMANDS                                        *Screenshot-commands*
+
+Screenshot					      *:Screenshot*
+
+        Takes a screenshot.
+
+        The screenshot is placed in
+        `$HOME/Pictures/Screenshot.nvim-YYYYMMDD-HHMMSS.png`.
+
+        It also takes into account the existence of
+        XDG user directories.
+
+        That means, that if you have set a custom pictures like so:
+        `XDG_PICTURES_DIR="$HOME/Pictures"`
+        It'll write the Screenshots to this directory
+        instead of the default `$HOME/Pictures`.
+
+MAPPINGS                                        *Screenshot-mappings*
+
+There are no mappings registered by the plugin.
+You need to map it according to your preference.
+
+ABOUT                                           *Screenshot-about*
+
+Grab the latest version or report a bug:
+
+http://git.superevilmegaco.com/superevilmegaco/Neovim/Screenshot.nvim
+
+ vim:tw=78:et:ft=help:norl:
