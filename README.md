@@ -1,7 +1,9 @@
 Screenshot.nvim
 ===============
 
-A Vim/Neovim plugin to run take Screenshots of the current window.
+![](icon-512x512.png)
+
+A Vim/Neovim plugin to take Screenshots of the current window.
 It utilizes the [scrot](https://en.wikipedia.org/wiki/Scrot) binary,
 so you'd have to make sure that `scrot` is installed.
 
@@ -23,7 +25,14 @@ XDG_PICTURES_DIR="$HOME/MyAwesomePictures"
 It'll write the Screenshots to this directory instead of the default
 `$HOME/Pictures`.
 
+## Credits
+
+### Icon
+
+Icon by [Free Icon Shop][icon].
+
 
 
 [xdg_user_dirs]: https://wiki.archlinux.org/index.php/XDG_user_directories
+[icon]: https://freeiconshop.com/icon/code-icon-flat/
 
