@@ -27,6 +27,20 @@ function! Screenshot#Window()
         call s:ExecExternalCommand(cmd)
 endfunction
 
+function! Screenshot#ForceCloseBuffer()
+        execute "bd!"
+endfunction
+
+function! Screenshot#WindowRange() range
+        let sel = getline(a:firstline, a:lastline)
+        let ft = &filetype
+        execute "enew"
+        call append(0, sel)
+        execute "set ft=" . ft
+        call timer_start(500, { tid -> Screenshot#Window() })
+        call timer_start(500, { tid -> Screenshot#ForceCloseBuffer() })
+endfunction
+
 function! s:OnJobEventHandler(job_id, data, event) dict
         if a:event == 'stdout'
                 let str = self.shell.' stdout: '.join(a:data)
@@ -55,4 +69,5 @@ function! s:ExecExternalCommand(command)
 endfunction
 
 command! Screenshot call Screenshot#Window()
+command! -range=% -nargs=0 Screenshot :<line1>,<line2>call Screenshot#WindowRange()
 

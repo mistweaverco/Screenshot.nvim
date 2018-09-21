@@ -13,6 +13,22 @@ so you'd have to make sure that `scrot` is installed.
 
 The screenshot is placed in `~/Pictures/Screenshot.nvim-YYYYMMDD-HHMMSS.png`.
 
+### Range
+
+The `Screenshot` command can also be used with a range, e.g.:
+
+```
+:'<,'>Screenshot
+```
+
+This opens up a new buffer and sets the filetype to the ft where the selection
+came from and then it waits for 500ms and takes a Screenshot.
+
+Then it waits another 500ms and force closes the buffer (`:bd!`).
+
+**Important: Make sure 'hidden' or 'autowriteall' is set,
+otherwise this fails if there are unsaved changes.**
+
 It also takes into account the existence of
 [XDG user directories][xdg_user_dirs].
 

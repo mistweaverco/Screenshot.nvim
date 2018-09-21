@@ -26,6 +26,21 @@ Screenshot					      *:Screenshot*
         It'll write the Screenshots to this directory
         instead of the default `$HOME/Pictures`.
 
+
+        The `Screenshot` command can also be used with a range, e.g.:
+
+        `:'<,'>Screenshot`
+
+        This opens up a new buffer and sets the 'filetype'
+        to the 'ft' where the selection
+        came from and then it waits for 500ms and takes a Screenshot.
+
+        Then it waits another 500ms and force closes the buffer (`:bd!`).
+
+        IMPORTANT:
+        Make sure 'hidden' or 'autowriteall' is set,
+        otherwise this fails if there are unsaved changes.
+
 MAPPINGS                                        *Screenshot-mappings*
 
 There are no mappings registered by the plugin.
